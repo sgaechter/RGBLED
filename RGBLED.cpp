@@ -121,13 +121,16 @@ void RGBLED::writeHSV(int h, double s, double v) {
 
 // Cycle through the color wheel
 // Stolen from: http://eduardofv.com/read_post/179-Arduino-RGB-LED-HSV-Color-Wheel-
-void RGBLED::writeColorWheel(int dly) {
+void RGBLED::writeColorWheel(int dly, int repeat) {
   //The Hue value will vary from 0 to 360, which represents degrees in the color wheel
-  for(int hue=0;hue<360;hue++)
-  {
-    writeHSV(hue,1,1); //We are using Saturation and Value constant at 1
-    delay(dly); //each color will be shown for 10 milliseconds
-  }
+   for(int cycle=0;cycle<repeat;cycle++)
+   {
+	for(int hue=0;hue<360;hue++)
+	  {
+	    writeHSV(hue,1,1); //We are using Saturation and Value constant at 1
+	    delay(dly); //each color will be shown for 10 milliseconds
+	  }
+   }
 }
 
 
