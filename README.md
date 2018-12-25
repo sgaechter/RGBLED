@@ -172,8 +172,8 @@ void loop() {
   //Show the color wheel
   Serial.println("Showing RGB Color Wheel...");
   Serial.println("------------------------------");
-  //Use a 25ms delay between each color in the wheel
-  rgbLed.writeColorWheel(25);
+  //Use a 25ms delay between each color in the wheel, repeat the wheel 5 times
+  rgbLed.writeColorWheel(25,5);
 
   //Turn off the RGBLED
   rgbLed.turnOff();
