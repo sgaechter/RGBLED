@@ -123,6 +123,7 @@ void RGBLED::writeHSV(int h, double s, double v) {
 // Stolen from: http://eduardofv.com/read_post/179-Arduino-RGB-LED-HSV-Color-Wheel-
 void RGBLED::writeColorWheel(int dly, int repeat) {
   //The Hue value will vary from 0 to 360, which represents degrees in the color wheel
+	// With the repetition value is it possible to increase the numbers of cycles of the color Wheel (edit by sgaechter)
 	for(int cycle=0;cycle<repeat;cycle++){
 		for(int hue=0;hue<360;hue++){
 			writeHSV(hue,1,1); //We are using Saturation and Value constant at 1
