@@ -124,10 +124,11 @@ void RGBLED::writeHSV(int h, double s, double v) {
 void RGBLED::writeColorWheel(int dly, int repeat) {
   //The Hue value will vary from 0 to 360, which represents degrees in the color wheel
 	// With the repetition value is it possible to increase the numbers of cycles of the color Wheel (edit by sgaechter)
-	for(int cycle=0;cycle<repeat;cycle++){
+	if (int cycle >= repeat) {
 		for(int hue=0;hue<360;hue++){
 			writeHSV(hue,1,1); //We are using Saturation and Value constant at 1
 			delay(dly); //each color will be shown for 10 milliseconds
+		cycle++
 		}
 	}
 }
